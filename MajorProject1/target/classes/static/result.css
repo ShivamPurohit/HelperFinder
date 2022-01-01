@@ -1,0 +1,143 @@
+body{
+	font-size: 1.5rem;
+	
+}
+#table{ 
+	width:80%;
+	margin: auto;
+	margin-top: 2%;
+	
+}
+.navbar-brand {
+    /* font-family: 'Big Shoulders Display', cursive; */
+    font-family: 'Molengo', sans-serif;
+    font-size: 2rem;
+    padding: 0 3% 0.2%;
+}
+.nav-item {
+    font-size: 1.2rem;
+    padding-right: 2.5rem;
+}
+
+table tr{
+                cursor: pointer;transition: all .25s ease-in-out;
+            }
+table tr:hover{background-color: #ddd;}
+
+/*pop up form*/ 
+
+  .bg-modal{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.315);
+    position: fixed;
+    top: 0;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    visibility: hidden;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.modal-contents {
+    top: 0;
+    bottom: 0;
+	height: 95%;
+	width: 500px;
+	background-color: white;
+	text-align: center;
+	
+	/* position: relative; */
+	border-radius: 4px;
+    
+    padding: 0px 0px 20px 0px;
+    /* margin-top: 20px;
+    margin-bottom: 20px; */
+    /* padding: 20px 30px 20px 30px; */
+
+}
+
+/* .indiv{ */
+   
+    /* background-color: #FFFFFF; */
+    /* padding: 10%; */
+    /* text-align: center; */
+    
+
+/* } */
+
+.p__heading{
+    margin-bottom: 20px;
+    padding-top: 15px;
+
+}
+
+.close2{
+    float: right;
+    margin-top: -5rem;
+    
+}
+
+.p__close__icon{
+    border: none;
+    background-color: white;
+   
+}
+
+label{
+    margin-bottom: 0rem;
+}
+
+.p__helper__members{
+    /* background-color: black; */
+    color: black;
+    height: 50px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.editp{
+    display: inline-block;
+    padding-left: 20px;
+    line-height: 3.5rem;
+    font-weight: 500;
+}
+
+.editp__input{
+    /* display: flex; */
+    padding-left: 20px;
+   margin-bottom: 1%;
+    display: grid;
+    padding-right: 20px;
+
+}
+
+.i2:focus{
+    outline-color:#57B8FF;
+}
+
+.i2{
+    height: 35px;
+    font-size: 16px;
+    font-weight: 100;
+}
+
+.line{
+    margin-top: 30px;
+}
+
+.p__submit__button{
+   
+    font-size: 15px;
+    font-weight: 400;
+    padding-left: 50px;
+    padding-right: 50px;
+    border: 1px solid black;
+}
+
+.share-icon{
+	background-color:#075E54 !important; 
+	color:white !important;
+}

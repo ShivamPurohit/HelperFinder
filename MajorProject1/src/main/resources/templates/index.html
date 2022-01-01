@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--favicon-->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+    <title>Helperfinder</title>
+</head>
+<body>
+  <div class="header"></div>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img src="images/brand.png" width="60" height="60"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        
+         <li class="nav-item">
+            <a class="nav-link" th:text="${username}" href="#"></a>
+          </li>
+        
+          <li class="nav-item">
+            <a class="nav-link active"aria-current="page" href="index">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="login">Login / Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about">About</a>
+          </li>
+          
+         
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+  <div class="main-parent">
+    <div class="image-wrapper">
+      <img class="image-1" src="images/main.jpg" />
+      <img class="image-2" src="images/main.jpg" />
+      <img class="image-3" src="images/main.jpg" />
+      <img class="image-4" src="images/main.jpg" />
+    </div>
+  
+    <div class="right-container">
+      <div class="point_login">
+        <p>To Login or Register<br>click here!</p>
+        <img src="images/arrow_login.png" width="120" alt="">
+      </div>
+  
+      <div class="heading">
+        <p>HELPER</p>
+        <p>FINDER</p>
+      </div>
+  
+      <div class="point_search">
+        <img src="images/arrow_search.png" width="120" alt="">
+        <p>Scroll down to<br>start searching!</p>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="part"></div> -->
+
+
+
+  <div class="main-parent">
+    <div class="left-container">
+    <h1>Find Helper</h1>
+      <form action="filter-search" method="get">
+        <div class="form-group">
+          <label for="location">Location:</label>
+          <input class="form-control" list="Areas" name="location" id="Area" />
+          <datalist id="Areas">
+            <option value="Jakhan">
+            <option value="Nehru Colony">
+            <option value="Vasant Vihar">
+            </datalist>
+        </div>
+        <div class="form-group">
+          <label for="profession">Profession:</label>
+          <input class="form-control" list="Professions" name="profession" id="Profession" />
+          <datalist id="Professions">
+            <option value="Carpenter">
+            <option value="Plumber">
+            <option value="Electrician">
+            </datalist>
+        </div>
+        <button class="btn btn-lg btn-primary" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="image-wrapper next">
+      <img class="image-1" src="images/backdrop.jpg" />
+      <img class="image-2" src="images/backdrop.jpg" />
+      <img class="image-3" src="images/backdrop.jpg" />
+      <img class="image-4" src="images/backdrop.jpg" />
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <p>© 2021 Helperfinder</p>
+  </div>
+
+  <div class="header"></div>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+</body>
+</html>

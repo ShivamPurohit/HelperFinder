@@ -1,0 +1,95 @@
+html, body {
+    height: 100%;
+}
+body {
+    text-align: center;
+}
+
+.navbar-brand {
+    /* font-family: 'Big Shoulders Display', cursive; */
+    font-family: 'Molengo', sans-serif;
+    font-size: 2.5rem;
+    padding: 0 0 0 3%;
+}
+.nav-item {
+    font-size: 1.2rem;
+    padding-right: 2.5rem;
+}
+
+.main {
+    display: flex;
+    height: 85%;
+}
+.title {
+    margin: 1% 0 2%;
+}
+
+.customer {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: auto;
+    padding: 0 200px;
+}
+.child {
+    border: #0F52BA solid 5px;
+    border-radius: 5%;
+    height: auto;
+    width: 100%;
+    max-width: 470px;
+    margin: auto;
+    padding: 60px 60px 20px;
+    position: relative;
+}
+.btn {
+    margin-top: 20px;
+}
+h1 {
+    font-family: 'Molengo', sans-serif;
+    color: #0F52BA;
+    font-size: 3rem;
+}
+.header {
+    position: absolute;
+    background-color: white;
+    padding: 0 15px;
+}
+.lgn {
+    left: 150px;
+    bottom: 240px;
+}
+.sgn {
+    left: 125px;
+    bottom: 300px;
+}
+.register {
+    left: 135px;
+    bottom: 470px;
+    background-color: #002366;
+}
+
+.helper {
+    display: flex;
+    flex-direction: column;
+    padding: 0 200px;
+    background-color: #002366;
+    width: 50%;
+}
+.helper h1 {
+    color: ghostwhite;
+}
+.reg {
+    border: ghostwhite solid 5px;
+    border-radius: 5%;
+}
+
+
+.footer {
+    background-color: #0C0C0C;
+    color: ghostwhite;
+    text-align: center;
+    padding: 1% 0 1%;
+}
+.footer p {
+    margin-bottom: 0;
+}

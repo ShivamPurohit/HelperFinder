@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+
+	<!-- CSS only -->
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+	<link rel="stylesheet" href="result.css" type="text/css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<script src="https://kit.fontawesome.com/e76c93eaf7.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="index">Helperfinder</a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+				aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+				<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+
+					<li class="nav-item">
+						<a class="nav-link" th:text="${username}" href="#"></a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link " aria-current="page" href="index">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="login">Login / Register</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="about">About</a>
+					</li>
+
+
+
+				</ul>
+
+
+
+			</div>
+		</div>
+	</nav>
+
+	<table id='tableresult' class="table table-bordered">
+
+		<thead>
+			<tr>
+
+
+				<th scope="col">NAME</th>
+				<th scope="col">Profile Picture</th>
+				<th scope="col">AGE</th>
+				<th scope="col">GENDER</th>
+				<th scope="col">CONTACT</th>
+				<th scope="col">PROFESSION</th>
+				<th scope="col">ADDRESS</th>
+				<th scope="col">LOCATION</th>
+				<th scope="col">Rating</th>
+
+			</tr>
+		</thead>
+
+		<tbody>
+
+
+			<tr th:each="helper: ${helper}">
+
+				<th scope="row" th:text="${helper.name}" />
+				<td> <img class="image" th:src="@{ 'profileImages/' + ${helper.profile}}" alt="Avatar" height="100px"
+						width="150px"></td>
+
+				<!--<td th:text="${helper.profile}"/> -->
+				<td th:text="${helper.age}" />
+				<td th:text="${helper.gender}" />
+				<td th:text="${helper.contact}" />
+				<td th:text="${helper.profession}" />
+				<td th:text="${helper.address}" />
+				<td th:text="${helper.location}" />
+				<td th:text="${helper.rating}" />
+				<!--   <td><button type="submit" class="bookingButton" id="booknow" onClick="" >Book Now</button></td> -->
+
+			</tr>
+
+		</tbody>
+
+	</table>
+
+
+
+	<!--  pop-up form code -->
+
+
+	<div class="bg-modal">
+		<div class="modal-contents">
+
+			<div class="indiv">
+				<div style="margin-top: 20px;">
+					<h4 class="p__heading p__helper__members">HELPER DETAILS</h4>
+					<div class="close2"><button class="p__close__icon"><i class="fas fa-times"
+								id="cross__button"></i></button>
+					</div>
+				</div>
+
+
+				<form action="confirm-Booking" method="get">
+
+					<label class="editp">NAME</label>
+					<input id="input__name" class=" inputWrapper i2  " type="text" placeholder=" " name="name">
+					<br>
+					<label class="editp">AGE</label>
+					<input id="input__age" class=" inputWrapper i2 " type="text" placeholder=" " name="age">
+					<br>
+
+					<label class="editp">GENDER</label>
+					<input id="input__gender" class="inputWrapper i2 " type="text" placeholder=" " name="gender">
+					<br>
+
+					<label class="editp">CONTACT</label>
+					<input id="input__contact" class="inputWrapper i2 " type="text" placeholder=" " name="contact">
+					<br>
+					<label class="editp">PROFESION</label>
+					<input id="input__profession" class="inputWrapper i2 " type="text" placeholder=" "
+						name="profession">
+					<br>
+
+					<label class="editp">ADDRESS</label>
+					<input id="input__address" class="inputWrapper i2  " type="text" placeholder=" " name="address">
+					<br>
+					<label class="editp">LOCATION</label>
+					<input id="input__location" class="inputWrapper i2  " type="text" placeholder="" name="location">
+					<br>
+
+					<label class="editp">RATING</label>
+					<input id="input__rating" class="inputWrapper i2 " type="text" placeholder="" name="rating">
+
+					<hr class="line">
+
+					<button class="btn btn-dark2 p__submit__button">CONFIRM BOOKING</button>
+					
+					
+				</form>
+
+					<button class="btn share-icon" id="myButton">Share <img src="images/whatsa.png" width="25px"
+							height="25px"></button>
+			</div>
+		</div>
+
+		<script>
+
+
+		
+		
+			
+
+
+			let msg = "";
+
+			// document.getElementById("tableresult").onload = function() {myFunction()};
+
+			console.log(1);
+			var x = document.getElementById("tableresult").rows.length;
+			console.log(x);
+
+			//console.log(tableresult.row[1].cells[0]);
+			if (x === 1) console.log("No data");
+			for (var i = 1; i < x; i++) {
+				console.log(i);
+				//console.log(tableresult.row[i].cells[0]);
+
+
+				tableresult.rows[i].onclick = function () {
+					//console.log(rows[i].cells[0]);
+					//rIndex = this.rowIndex;
+					document.getElementById("input__name").value = this.cells[0].innerHTML;
+					document.getElementById("input__age").value = this.cells[2].innerHTML;
+					document.getElementById("input__gender").value = this.cells[3].innerHTML;
+					document.getElementById("input__contact").value = this.cells[4].innerHTML;
+					document.getElementById("input__profession").value = this.cells[5].innerHTML;
+					document.getElementById("input__address").value = this.cells[6].innerHTML;
+					document.getElementById("input__location").value = this.cells[7].innerHTML;
+					document.getElementById("input__rating").value = this.cells[8].innerHTML;
+					document.querySelector('.bg-modal').style.visibility = 'visible';
+					msg = "name = " + document.getElementById("input__name").value +", age = "+ document.getElementById("input__age").value+", gender = "+document.getElementById("input__gender").value+", contact =  "+document.getElementById("input__contact").value+", profession = "+document.getElementById("input__profession").value+", address = "+document.getElementById("input__address").value+
+					", location = "+document.getElementById("input__location").value+", rating = "+document.getElementById("input__rating").value;
+					console.log(msg);
+				};
+			}
+
+
+
+			 document.getElementById("myButton").onclick = function () {
+       		
+       		    var url = "https://api.whatsapp.com/send?text="+msg;
+       		     window.open(url, '_blank').focus();
+
+		}
+			//  var tableq = document.getElementById('tableresut');
+
+
+
+
+			/*document.getElementById('tableresult tr').click(function(event) {
+				 document.querySelector('td', this).each(function(i) {
+				   document.getElementsByClassName('inputWrapper input').eq(i).val(this.textContent);
+				 });
+			   });
+			 
+			 */
+
+
+
+
+			/*document.getElementById('booknow').addEventListener('click',function(){
+			document.querySelector('.bg-modal').style.visibility = 'visible';
+			
+		});*/
+
+	
+
+
+			document.getElementById('cross__button').addEventListener('click',
+				function () {
+					document.querySelector('.bg-modal').style.visibility = 'hidden';
+
+				});
+
+
+		</script>
+
+
+</body>
+
+</html>
